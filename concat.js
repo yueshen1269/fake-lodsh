@@ -23,4 +23,4 @@ function _concat(array, ...values) {
 
 
 // 源码思路： 使用flatten函数扁平（一层）接收到的参数列表，并使用自定义函数arrayPush整体push
-// array 不是数组处理成数组 [array]
+// 异常处理： array 不是数组处理成数组 [array]
