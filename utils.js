@@ -115,14 +115,17 @@ function copyArray(source, array) {
   return array;
 }
 
+// 不是null和function，且有length属性的对象
 function isArrayLike(value) {
   return value != null && isLength(value.length) && !isFunction(value);
 }
 
+// 有length的对象，并且不是函数
 function isArrayLikeObject(value) {
   return isObjectLike(value) && isArrayLike(value);
 }
 
+// length属性的值为非负整数，且小于最大安全值
 function isLength(value) {
   return typeof value == 'number' &&
     value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
@@ -135,7 +138,7 @@ function isFunction(value) {
   return tag == funcTag || tag == genTag;
 }
 
-
+// typeof null == 'object'
 function isObject(value) {
   var type = typeof value;
   return !!value && (type == 'object' || type == 'function');
