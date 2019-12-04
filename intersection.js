@@ -1,3 +1,4 @@
+// 不能比较对象
 function _baseInterSection(a, b) {
   if(!Array.isArray(a) || !Array.isArray(b)) {
     return [];
